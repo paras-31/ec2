@@ -1,11 +1,11 @@
 
 resource "aws_s3_bucket" "b" {
   bucket = var.bucket
-  acl    = "public-read"
+  acl    = var.acl
 #   policy = file("policy.json")
 
   website {
-    index_document = "index.html"
+    index_document = var.doc
     # error_document = "error.html"
 }
   tags = {
@@ -17,8 +17,8 @@ resource "aws_s3_bucket" "b" {
 
 resource "aws_s3_bucket_object" "object" {
   bucket = aws_s3_bucket.b.bucket
-  key    = "index.html"
-  source = "index.html"
-  acl = "public-read"
+  key    = var.doc
+  source = var.doc
+  acl = var.acl
   content_type = "text/html"
 }

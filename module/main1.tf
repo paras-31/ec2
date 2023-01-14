@@ -12,7 +12,10 @@ module "ec2" {
 module "s3" {
   source = "../s3"
   bucket = "parasbucnew"
+  acl = "public-read"
+  doc = "index.html"
   name = var.tags["A"]["name"]
   owner = var.tags["A"]["owner"]
   purpose = var.tags["A"]["purpose"]
+
 }

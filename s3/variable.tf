@@ -13,3 +13,11 @@ variable "owner" {
 variable "purpose"{
     type = string
 }
+
+variable "doc" {
+  type = string
+}
+
+variable "acl" {
+  type = string
+}
