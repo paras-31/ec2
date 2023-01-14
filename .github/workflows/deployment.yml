@@ -40,8 +40,8 @@ jobs:
         run: |
             cd module
             terraform plan
-            
+
       - name: terraform apply
         run: |
           cd module
-          terraform apply
+          terraform apply -auto-approve
