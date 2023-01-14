@@ -8,3 +8,11 @@ module "ec2" {
   purpose = each.value["purpose"]
 
 }
+
+module "s3" {
+  source = "../s3"
+  bucket = "parasbucnew"
+  name = var.tags["A"]["name"]
+  owner = var.tags["A"]["owner"]
+  purpose = var.tags["A"]["purpose"]
+}
