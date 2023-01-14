@@ -18,7 +18,7 @@ resource "aws_s3_bucket" "b" {
 resource "aws_s3_bucket_object" "object" {
   bucket = aws_s3_bucket.b.bucket
   key    = var.doc
-  source = var.doc
+  source = "html/index.html"
   acl = var.acl
   content_type = "text/html"
 }
